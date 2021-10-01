@@ -1,23 +1,22 @@
 {
   "files": {
     "main.css": "/trivia-generator/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/trivia-generator/static/js/main.acfabc44.chunk.js",
-    "main.js.map": "/trivia-generator/static/js/main.acfabc44.chunk.js.map",
+    "main.js": "/trivia-generator/static/js/main.d5226e1b.chunk.js",
+    "main.js.map": "/trivia-generator/static/js/main.d5226e1b.chunk.js.map",
     "runtime-main.js": "/trivia-generator/static/js/runtime-main.1633d90b.js",
     "runtime-main.js.map": "/trivia-generator/static/js/runtime-main.1633d90b.js.map",
-    "static/js/2.ea9e2dc1.chunk.js": "/trivia-generator/static/js/2.ea9e2dc1.chunk.js",
-    "static/js/2.ea9e2dc1.chunk.js.map": "/trivia-generator/static/js/2.ea9e2dc1.chunk.js.map",
+    "static/js/2.0627fbfc.chunk.js": "/trivia-generator/static/js/2.0627fbfc.chunk.js",
+    "static/js/2.0627fbfc.chunk.js.map": "/trivia-generator/static/js/2.0627fbfc.chunk.js.map",
     "static/js/3.85610c0b.chunk.js": "/trivia-generator/static/js/3.85610c0b.chunk.js",
     "static/js/3.85610c0b.chunk.js.map": "/trivia-generator/static/js/3.85610c0b.chunk.js.map",
     "index.html": "/trivia-generator/index.html",
     "static/css/main.8c8b27cf.chunk.css.map": "/trivia-generator/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.ea9e2dc1.chunk.js.LICENSE.txt": "/trivia-generator/static/js/2.ea9e2dc1.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/trivia-generator/static/media/logo.6ce24c58.svg"
+    "static/js/2.0627fbfc.chunk.js.LICENSE.txt": "/trivia-generator/static/js/2.0627fbfc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1633d90b.js",
-    "static/js/2.ea9e2dc1.chunk.js",
+    "static/js/2.0627fbfc.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.acfabc44.chunk.js"
+    "static/js/main.d5226e1b.chunk.js"
   ]
 }
