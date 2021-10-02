@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Button, Typography, FormControl, Select, SelectChangeEvent, MenuItem, Slider } from "@mui/material";
+import { Button, Typography, FormControl, Select, SelectChangeEvent, MenuItem, Slider, TextField } from "@mui/material";
 import { TriviaQuestionComponent } from "./components/TriviaQuestionComponent";
 const opentdb = require("opentdb-api");
 
@@ -51,7 +51,7 @@ const QuestionTypes = ["any", "choice", "multiple", "truefalse", "boolean"];
 
 function App() {
 	const [questions, setQuestions] = useState<TriviaQuestion[]>([]);
-	const [amount, setAmount] = useState<number>(1);
+	const [amount, setAmount] = useState<number>(10);
 	const [category, setCategory] = useState<string>("any");
 	const [difficulty, setDifficulty] = useState<string>("any");
 	const [type, setType] = useState<string>("any");
@@ -75,7 +75,10 @@ function App() {
 	};
 
 	return (
-		<div className="App">
+		<div
+			className="App"
+			//style={{ backgroundColor: "lightblue" }}
+		>
 			<Typography variant="h2" component="div" align="center" gutterBottom>
 				Trivia Generator - Version 1.0
 			</Typography>
@@ -87,7 +90,7 @@ function App() {
 					<Slider
 						aria-label="Number of Questions"
 						valueLabelDisplay="auto"
-						defaultValue={1}
+						defaultValue={10}
 						min={1}
 						max={50}
 						value={amount}
@@ -166,6 +169,7 @@ function App() {
 					</FormControl>
 				</div>
 			</div>
+			{/* <TextField id="outlined-textarea" label="Multiline Placeholder" placeholder="Placeholder" multiline /> */}
 			<Button
 				variant="contained"
 				size="large"

@@ -1,5 +1,7 @@
-import React from "react";
-import { Typography } from "@mui/material";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
+import { Typography, Card, CardActions, CardContent, Button } from "@mui/material";
+import { Answer } from "./Answer";
 
 interface Props {
 	questionData: TriviaQuestion;
@@ -7,6 +9,8 @@ interface Props {
 }
 
 export const TriviaQuestionComponent: React.FC<Props> = ({ questionData, questionNumber }) => {
+	const [showCorrect, setShowCorrect] = useState(false);
+	//const [answers, setAnswers] = useState([...questionData.incorrect_answers, questionData.correct_answer]);
 	const shuffle = (array: string[]) => {
 		let currentIndex = array.length,
 			randomIndex;
@@ -21,25 +25,64 @@ export const TriviaQuestionComponent: React.FC<Props> = ({ questionData, questio
 			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
 		}
 
+		console.log("shuffle");
+
 		return array;
 	};
 
-	//const highlightCorrectAnswer = () => {};
+	var answers: string[] = shuffle([...questionData.incorrect_answers, questionData.correct_answer]);
 
-	var answers: string[] = [...questionData.incorrect_answers, questionData.correct_answer];
-	shuffle(answers);
+	//const answers: string[] = shuffle([...questionData.incorrect_answers, questionData.correct_answer]);
+	//shuffle(answers);
+
+	// useEffect(() => {
+	// 	shuffle(answers);
+	// }, []);
 
 	return (
-		<div style={{ margin: 100 }}>
-			<Typography style={{ textAlign: "left" }}>
-				{questionNumber + 1}. {questionData.question}
-			</Typography>
-			{answers.map((answer) => {
-				return <Typography key={answer}>{answer}</Typography>;
-			})}
-		</div>
+		<Card
+			style={{
+				margin: 100,
+				//backgroundColor: "lightpink"
+			}}
+		>
+			<CardContent>
+				<Typography variant="h6" style={{ textAlign: "left" }}>
+					{questionNumber + 1}. {questionData.question}
+				</Typography>
+				{answers.map((answer) => {
+					return (
+						<Answer
+							key={answer}
+							text={answer}
+							isCorrect={answer === questionData.correct_answer}
+							showCorrect={showCorrect}
+						></Answer>
+					);
+				})}
+			</CardContent>
+			<CardActions style={{ justifyContent: "center" }}>
+				<Button
+					size="small"
+					variant="contained"
+					onClick={() => {
+						setShowCorrect(true);
+					}}
+					style={{ marginBottom: 10 }}
+				>
+					Show answer
+				</Button>
+			</CardActions>
+		</Card>
 	);
 };
+
+/*
+To fix:
+
+- Answers shuffle again after clicking "show answer"
+
+*/
 
 /*
 To add:
